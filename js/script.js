@@ -1,7 +1,8 @@
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
 const clouds = document.querySelector('.clouds');
-
+const score = document.querySelector('.score');
+var count = 0
 const jump = () => {
     mario.classList.add('jump');
     setTimeout(() => {
@@ -16,6 +17,15 @@ const loop = setInterval(() => {
 
 
         if (pipePosition <= 120 && pipePosition > 0 && marioPosition <= 80){
+            
+            var countScore = function (count) {
+                count=0;
+            };
+                        
+            setTimeout(function(){
+                alert(`Você perdeu sua pontuação foi de ${count}, atualize a página e tente novamente.`);
+            }, 50);
+
             pipe.style.animation = 'none';
             pipe.style.left = `${pipePosition}px`;
 
@@ -29,9 +39,17 @@ const loop = setInterval(() => {
             mario.style.width = '70px';
             mario.style.marginLeft = '60px'
             
+            
             clearInterval(loop);
-        }
-}, 10)
 
+        }   
+        count++; 
+        score.innerHTML = `SCORE: ${count}`;
+    }, 10)
+    
 
-document.addEventListener('keydown', jump);
+document.addEventListener('keydown', (e) => {
+    if ((e.code === "ArrowUp") | (e.code === "Space")){
+        jump();
+    }
+});

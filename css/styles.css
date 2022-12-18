@@ -30,6 +30,15 @@
     margin-top: 130px;
     animation: clouds-animation 6s infinite linear;
 }
+.score{
+    position: absolute; 
+    right: 50px;
+    padding: 80px;
+    font-weight: bold;
+    font-family: 'VT323', monospace;
+    font-size: 50px;
+
+}
 @keyframes pipe-animation {
     from {
         right: -80px;
