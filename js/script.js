@@ -17,15 +17,13 @@ const loop = setInterval(() => {
 
 
         if (pipePosition <= 120 && pipePosition > 0 && marioPosition <= 80){
+    
+            setTimeout(() =>{
+                 if(confirm(text = `Você perdeu sua pontuação foi de ${count}, atualize a página e tente novamente.`) == true){
+                    return location.reload()
+                 }
+            }, 100)
             
-            var countScore = function (count) {
-                count=0;
-            };
-                        
-            setTimeout(function(){
-                alert(`Você perdeu sua pontuação foi de ${count}, atualize a página e tente novamente.`);
-            }, 50);
-
             pipe.style.animation = 'none';
             pipe.style.left = `${pipePosition}px`;
 
@@ -45,7 +43,7 @@ const loop = setInterval(() => {
         }   
         count++; 
         score.innerHTML = `SCORE: ${count}`;
-    }, 10)
+    }, 100)
     
 
 document.addEventListener('keydown', (e) => {
