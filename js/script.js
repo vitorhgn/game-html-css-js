@@ -19,7 +19,7 @@ const loop = setInterval(() => {
         if (pipePosition <= 120 && pipePosition > 0 && marioPosition <= 80){
     
             setTimeout(() =>{
-                 if(confirm(text = `Você perdeu sua pontuação foi de ${count}, atualize a página e tente novamente.`) == true){
+                 if(confirm(text = `Você perdeu sua pontuação foi de ${count}, atualize a página e tente novamente.`)){
                     return location.reload()
                  }
             }, 100)
